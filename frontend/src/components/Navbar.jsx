@@ -26,7 +26,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
       >
-        <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 py-4 md:py-5 flex items-center justify-between">
 
           {/* Logo */}
           <motion.div className="flex flex-col leading-none" whileHover={{ opacity: 0.8 }}>

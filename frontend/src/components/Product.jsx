@@ -42,7 +42,7 @@ export default function Product() {
   })
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-8 md:px-20 bg-[#080808] overflow-hidden">
+    <section ref={sectionRef} className="relative py-20 md:py-32 px-5 md:px-20 bg-[#080808] overflow-hidden">
 
       {/* Ambient left glow */}
       <div
@@ -67,7 +67,7 @@ export default function Product() {
           </span>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-24 items-center">
 
           {/* ── Left: 3-D product card ── */}
           <motion.div
@@ -84,7 +84,7 @@ export default function Product() {
               className="relative"
             >
               {/* Main image */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#0d0d0d] border border-[#c9a84c]/10">
+              <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-[#0d0d0d] border border-[#c9a84c]/10">
                 <img
                   src="/public/1.png"
                   alt="TAKUMI Series Zero"
@@ -218,7 +218,7 @@ export default function Product() {
 
             {/* Price + CTA */}
             <motion.div
-              className="flex items-center gap-7"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5"
               initial={{ opacity: 0, y: 18 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 1.15, duration: 0.85 }}
@@ -231,7 +231,7 @@ export default function Product() {
               </div>
 
               <motion.button
-                className="flex-1 py-4 bg-[#c9a84c] text-[#050505] font-inter font-medium uppercase transition-colors duration-300 hover:bg-[#f0d070]"
+                className="flex-1 py-4 bg-[#c9a84c] text-[#050505] font-inter font-medium uppercase transition-colors duration-300 hover:bg-[#f0d070] w-full"
                 style={{ fontSize: '10px', letterSpacing: '0.4em' }}
                 whileHover={{ scale: 1.02, boxShadow: '0 0 35px rgba(201,168,76,0.28)' }}
                 whileTap={{ scale: 0.97 }}

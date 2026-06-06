@@ -4,7 +4,7 @@ const navLinks = ['Series Zero', 'Series Zero Refill', 'Journal', 'Contact']
 
 export default function Footer() {
   return (
-    <footer className="relative py-16 px-8 md:px-20 border-t border-[#c9a84c]/10 bg-[#050505]">
+    <footer className="relative py-12 md:py-16 px-5 md:px-20 border-t border-[#c9a84c]/10 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
 
         {/* Top row */}

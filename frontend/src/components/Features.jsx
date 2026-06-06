@@ -33,7 +33,7 @@ export default function Features() {
   const inView = useInView(ref, { once: true, margin: '-10%' })
 
   return (
-    <section ref={ref} className="relative py-32 px-8 md:px-20 bg-[#050505] overflow-hidden">
+    <section ref={ref} className="relative py-20 md:py-32 px-5 md:px-20 bg-[#050505] overflow-hidden">
 
       {/* Ghost kanji */}
       <motion.div

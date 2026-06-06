@@ -15,7 +15,7 @@ export default function Philosophy() {
   const inView = useInView(ref, { once: true, margin: '-15%' })
 
   return (
-    <section ref={ref} className="relative py-36 px-8 md:px-20 bg-[#050505] overflow-hidden">
+    <section ref={ref} className="relative py-20 md:py-36 px-5 md:px-20 bg-[#050505] overflow-hidden">
 
       {/* Ambient glow */}
       <div
@@ -60,12 +60,12 @@ export default function Philosophy() {
         </motion.div>
 
         {/* Word-by-word quote reveal */}
-        <div className="flex flex-wrap gap-x-5 gap-y-1 mb-16">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 mb-12">
           {quoteWords.map((word, i) => (
             <div key={i} style={{ overflow: 'hidden' }}>
               <motion.span
                 className="font-cormorant text-[#e8e0d0] inline-block leading-tight"
-                style={{ fontSize: 'clamp(2.6rem, 6.5vw, 6rem)' }}
+                style={{ fontSize: 'clamp(2rem, 6.5vw, 6rem)' }}
                 initial={{ y: '115%' }}
                 animate={inView ? { y: '0%' } : {}}
                 transition={{
@@ -100,14 +100,14 @@ export default function Philosophy() {
 
         {/* Stats row */}
         <motion.div
-          className="mt-20 grid grid-cols-3 gap-8 border-t border-[#c9a84c]/10 pt-12"
+          className="mt-12 grid grid-cols-3 gap-4 border-t border-[#c9a84c]/10 pt-10"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.4, duration: 0.8 }}
         >
           {stats.map((s, i) => (
             <div key={i} className="text-center">
-              <div className="font-cormorant gold-text mb-2" style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}>
+              <div className="font-cormorant gold-text mb-2" style={{ fontSize: 'clamp(1.5rem, 4vw, 3.2rem)' }}>
                 {s.value}
               </div>
               <div

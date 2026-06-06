@@ -10,7 +10,7 @@ export default function CTA() {
   const bgY = useTransform(scrollYProgress, [0, 1], ['-12%', '12%'])
 
   return (
-    <section ref={ref} className="relative py-44 px-8 overflow-hidden bg-[#080808]">
+    <section ref={ref} className="relative py-24 md:py-44 px-5 md:px-8 overflow-hidden bg-[#080808]">
 
       {/* Parallax background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
@@ -52,7 +52,7 @@ export default function CTA() {
         <div style={{ overflow: 'hidden' }} className="mb-2">
           <motion.h2
             className="font-cormorant text-[#e8e0d0] leading-none inline-block"
-            style={{ fontSize: 'clamp(3.2rem, 9vw, 7.5rem)' }}
+            style={{ fontSize: 'clamp(2.4rem, 9vw, 7.5rem)' }}
             initial={{ y: '110%' }}
             animate={inView ? { y: '0%' } : {}}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
@@ -62,10 +62,10 @@ export default function CTA() {
         </div>
 
         {/* Heading line 2 – shimmer */}
-        <div style={{ overflow: 'hidden' }} className="mb-12">
+        <div style={{ overflow: 'hidden' }} className="mb-10">
           <motion.h2
             className="font-cormorant gold-shimmer leading-none inline-block"
-            style={{ fontSize: 'clamp(3.2rem, 9vw, 7.5rem)' }}
+            style={{ fontSize: 'clamp(2.4rem, 9vw, 7.5rem)' }}
             initial={{ y: '110%' }}
             animate={inView ? { y: '0%' } : {}}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.32 }}
@@ -94,8 +94,8 @@ export default function CTA() {
           transition={{ delay: 0.85, duration: 0.9 }}
         >
           <motion.button
-            className="px-12 py-5 bg-[#c9a84c] text-[#050505] font-inter font-medium uppercase hover:bg-[#f0d070] transition-colors duration-300"
-            style={{ fontSize: '10px', letterSpacing: '0.4em', minWidth: '220px' }}
+            className="px-8 py-4 bg-[#c9a84c] text-[#050505] font-inter font-medium uppercase hover:bg-[#f0d070] transition-colors duration-300 w-full sm:w-auto"
+            style={{ fontSize: '10px', letterSpacing: '0.4em', minWidth: '200px' }}
             whileHover={{ scale: 1.03, boxShadow: '0 0 45px rgba(201,168,76,0.32)' }}
             whileTap={{ scale: 0.97 }}
           >
@@ -103,8 +103,8 @@ export default function CTA() {
           </motion.button>
 
           <motion.button
-            className="px-12 py-5 border border-[#c9a84c]/38 text-[#c9a84c] font-inter uppercase hover:border-[#c9a84c] hover:bg-[#c9a84c]/6 transition-all duration-300"
-            style={{ fontSize: '10px', letterSpacing: '0.4em', minWidth: '220px' }}
+            className="px-8 py-4 border border-[#c9a84c]/38 text-[#c9a84c] font-inter uppercase hover:border-[#c9a84c] hover:bg-[#c9a84c]/6 transition-all duration-300 w-full sm:w-auto"
+            style={{ fontSize: '10px', letterSpacing: '0.4em', minWidth: '200px' }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >

@@ -122,8 +122,8 @@ export default function Hero() {
                 variants={letterVariants}
                 className="font-cormorant inline-block leading-none text-[#e8e0d0]"
                 style={{
-                  fontSize: 'clamp(5rem, 14vw, 12rem)',
-                  letterSpacing: '0.08em',
+                  fontSize: 'clamp(3.2rem, 14vw, 12rem)',
+                  letterSpacing: '0.06em',
                   textShadow: '0 0 100px rgba(201,168,76,0.07)',
                 }}
               >
@@ -135,8 +135,8 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.p
-          className="font-inter text-[#a09880] uppercase mt-5"
-          style={{ fontSize: '11px', letterSpacing: '0.32em' }}
+          className="font-inter text-[#a09880] uppercase mt-5 px-4 text-center"
+          style={{ fontSize: 'clamp(8px, 2.2vw, 11px)', letterSpacing: '0.22em' }}
           {...fadeUp(2.0)}
         >
           Rebellion through restraint.&nbsp;&nbsp;Luxury through soul.
@@ -173,17 +173,17 @@ export default function Hero() {
 
         {/* Bottle count badge */}
         <motion.div
-          className="mt-8 flex items-center justify-center gap-3"
+          className="mt-6 flex items-center justify-center gap-2"
           {...fadeUp(2.8)}
         >
-          <div className="h-px w-8 bg-[#c9a84c]/30" />
+          <div className="h-px w-6 bg-[#c9a84c]/30" />
           <span
             className="font-inter text-[#c9a84c]/55 uppercase"
-            style={{ fontSize: '9px', letterSpacing: '0.45em' }}
+            style={{ fontSize: 'clamp(7px, 2vw, 9px)', letterSpacing: '0.35em' }}
           >
             100 Bottles · No Restock · Ever
           </span>
-          <div className="h-px w-8 bg-[#c9a84c]/30" />
+          <div className="h-px w-6 bg-[#c9a84c]/30" />
         </motion.div>
       </motion.div>
 
