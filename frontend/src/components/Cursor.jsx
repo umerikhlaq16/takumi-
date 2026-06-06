@@ -23,7 +23,7 @@ export default function Cursor() {
     <>
       {/* Gold dot */}
       <motion.div
-        className="fixed pointer-events-none z-[9999]"
+        className="fixed pointer-events-none z-[9999] hidden md:block"
         style={{
           x: dotX, y: dotY,
           translateX: '-50%', translateY: '-50%',
@@ -35,7 +35,7 @@ export default function Cursor() {
 
       {/* Trailing ring */}
       <motion.div
-        className="fixed pointer-events-none z-[9998]"
+        className="fixed pointer-events-none z-[9998] hidden md:block"
         style={{
           x: ringX, y: ringY,
           translateX: '-50%', translateY: '-50%',
@@ -47,7 +47,7 @@ export default function Cursor() {
 
       {/* Outer soft ring */}
       <motion.div
-        className="fixed pointer-events-none z-[9997]"
+        className="fixed pointer-events-none z-[9997] hidden md:block"
         style={{
           x: ringX, y: ringY,
           translateX: '-50%', translateY: '-50%',
