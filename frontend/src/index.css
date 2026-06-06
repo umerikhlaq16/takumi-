@@ -79,3 +79,20 @@ body {
   overflow: hidden;
   display: inline-block;
 }
+
+/* GPU acceleration for animated elements */
+[data-framer-component-type],
+.motion-div {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

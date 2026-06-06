@@ -75,9 +75,9 @@ export default function Product() {
             onMouseMove={onMove}
             onMouseLeave={onLeave}
             style={{ perspective: 1000 }}
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.div
               style={{ rotateX: spRx, rotateY: spRy, transformStyle: 'preserve-3d' }}
@@ -133,9 +133,9 @@ export default function Product() {
 
           {/* ── Right: product info ── */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           >
             {/* Series label */}
             <div style={{ overflow: 'hidden' }} className="mb-3">

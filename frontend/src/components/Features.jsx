@@ -84,9 +84,9 @@ export default function Features() {
             <motion.div
               key={c.num}
               className="group relative p-8 border border-[#c9a84c]/10 hover:border-[#c9a84c]/35 transition-all duration-500 overflow-hidden"
-              initial={{ opacity: 0, y: 55 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.25 + i * 0.14, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.1 + i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -5 }}
             >
               {/* Hover bg sweep */}

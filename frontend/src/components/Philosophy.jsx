@@ -66,11 +66,11 @@ export default function Philosophy() {
               <motion.span
                 className="font-cormorant text-[#e8e0d0] inline-block leading-tight"
                 style={{ fontSize: 'clamp(2rem, 6.5vw, 6rem)' }}
-                initial={{ y: '115%' }}
-                animate={inView ? { y: '0%' } : {}}
+                initial={{ y: '100%', opacity: 0 }}
+                animate={inView ? { y: '0%', opacity: 1 } : {}}
                 transition={{
-                  delay: 0.2 + i * 0.1,
-                  duration: 1,
+                  delay: 0.1 + i * 0.07,
+                  duration: 0.7,
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >

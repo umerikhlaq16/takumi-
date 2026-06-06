@@ -1,20 +1,22 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
+const isMobile = () => typeof window !== 'undefined' && window.innerWidth < 768
+
 /* ── Letter animation helpers ── */
 const heroLetters = 'TAKUMI'.split('')
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.09, delayChildren: 0.7 },
+    transition: { staggerChildren: 0.07, delayChildren: 0.4 },
   },
 }
 const letterVariants = {
-  hidden: { y: '115%', opacity: 0, skewY: 6 },
+  hidden: { y: '100%', opacity: 0 },
   visible: {
-    y: '0%', opacity: 1, skewY: 0,
-    transition: { ease: [0.22, 1, 0.36, 1], duration: 1.3 },
+    y: '0%', opacity: 1,
+    transition: { ease: [0.22, 1, 0.36, 1], duration: 0.9 },
   },
 }
 
@@ -25,13 +27,13 @@ const fadeUp = (delay = 0) => ({
   transition: { delay, duration: 0.9, ease: [0.22, 1, 0.36, 1] },
 })
 
-/* ── Floating particles ── */
-const particles = Array.from({ length: 14 }, (_, i) => ({
+/* ── Floating particles — fewer on mobile ── */
+const particles = Array.from({ length: 8 }, (_, i) => ({
   id: i,
   top: `${10 + Math.random() * 80}%`,
   left: `${5 + Math.random() * 90}%`,
-  size: 1 + Math.random() * 2,
-  dur: 3 + Math.random() * 4,
+  size: 1 + Math.random() * 1.5,
+  dur: 4 + Math.random() * 3,
   delay: Math.random() * 2,
 }))
 
@@ -66,27 +68,28 @@ export default function Hero() {
       </motion.div>
 
       {/* ── Concentric circles ── */}
-      {[600, 900, 1200].map((size, i) => (
+      {[500, 800].map((size, i) => (
         <motion.div
           key={size}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#c9a84c] pointer-events-none z-0"
-          style={{ borderOpacity: 0.06 - i * 0.015 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#c9a84c]/10 pointer-events-none z-0"
           initial={{ width: 0, height: 0, opacity: 0 }}
           animate={{ width: size, height: size, opacity: 1 }}
-          transition={{ duration: 2.2 + i * 0.4, delay: 0.4 + i * 0.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.8 + i * 0.3, delay: 0.3 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
         />
       ))}
 
-      {/* ── Gold dust particles ── */}
-      {particles.map(p => (
-        <motion.div
-          key={p.id}
-          className="absolute rounded-full bg-[#c9a84c] pointer-events-none z-0"
-          style={{ top: p.top, left: p.left, width: p.size, height: p.size, opacity: 0.25 }}
-          animate={{ y: [0, -18, 0], opacity: [0.2, 0.5, 0.2] }}
-          transition={{ duration: p.dur, delay: p.delay, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      ))}
+      {/* ── Gold dust particles — desktop only ── */}
+      <div className="hidden md:block">
+        {particles.map(p => (
+          <motion.div
+            key={p.id}
+            className="absolute rounded-full bg-[#c9a84c] pointer-events-none z-0"
+            style={{ top: p.top, left: p.left, width: p.size, height: p.size, opacity: 0.2 }}
+            animate={{ y: [0, -14, 0], opacity: [0.15, 0.4, 0.15] }}
+            transition={{ duration: p.dur, delay: p.delay, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        ))}
+      </div>
 
       {/* ── Content ── */}
       <motion.div
